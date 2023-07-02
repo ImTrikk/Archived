@@ -7,6 +7,9 @@ const Headers = () => {
             " Archive of Unsaid Words "
           </h1>
         </div>
+        <div className="">
+          <p className="text-xs">A place where you can be yourself</p>
+        </div>
       </div>
     </div>
   );
