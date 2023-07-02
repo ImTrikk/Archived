@@ -9,7 +9,7 @@ const MessageCard = () => {
   return (
     <div className="">
       <div className="w-full flex flex-col p-5 bg-yellow-200 rounded-lg">
-        <div className="py-5">
+        <div className="py-3">
           <div className="px-5">
             <FaQuoteLeft className="text-white"/>
           </div>
