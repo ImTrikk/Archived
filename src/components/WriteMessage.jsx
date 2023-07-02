@@ -9,6 +9,11 @@ const WriteMessage = () => {
         <div className="flex">
           <h1 className="font-bold text-red-400 text-xl">Write a Message</h1>
         </div>
+        <div className="py-2">
+          <p className="text-[#8d8d8d] text-xs">
+            Write a message to the person you always wanted to say
+          </p>
+        </div>
         <div className="py-5">
           <form action="">
             <div className="space-y-2">
@@ -37,6 +42,19 @@ const WriteMessage = () => {
           </Link>
           <div className="bg-red-400 rounded-md h-8 text-sm flex items-center justify-center">
             <button className="text-white">Submit</button>
+          </div>
+        </div>
+        <div className="py-2">
+          <h1>Read Me!</h1>
+          <p className="text-xs text-[#8d8d8d] px-1">Messages will be removed if it offends anyone and </p>
+          <div className="py-2 p-6">
+            <ul className="text-xs text-[#8d8d8d] space-y-1">
+              <li className="list-disc">Be responsible in what you say</li>
+              <li className="list-disc">Think before you click</li>
+              <li className="list-disc">Don't say bad words</li>
+              <li className="list-disc">Don't degrade someone</li>
+              <li className="list-disc">Be respectful</li>
+            </ul>
           </div>
         </div>
       </div>
