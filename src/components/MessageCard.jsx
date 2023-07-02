@@ -21,7 +21,7 @@ const MessageCard = () => {
           </div>
         </div>
         <div className="flex justify-end gap-10 px-10">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-4">
             <div>
               <AiTwotoneHeart />
             </div>
@@ -32,7 +32,7 @@ const MessageCard = () => {
               <FaShareAlt />
             </div>
             <div>
-              <HiOutlineDownload />
+              <HiOutlineDownload size="20px"/>
             </div>
           </div>
           <div className="flex justify-end">
