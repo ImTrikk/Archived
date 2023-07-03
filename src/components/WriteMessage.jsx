@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 
 const WriteMessage = () => {
   return (
-    <div>
+    <div className="">
       <Navbar />
       <div className="p-5">
         <div className="flex">
@@ -11,7 +11,7 @@ const WriteMessage = () => {
         </div>
         <div className="py-2">
           <p className="text-[#8d8d8d] text-xs">
-            Write a message to the person you always wanted to say
+            Write a message you always wanted  to say to a person
           </p>
         </div>
         <div className="py-5">
@@ -45,7 +45,7 @@ const WriteMessage = () => {
           </div>
         </div>
         <div className="py-2">
-          <h1>Read Me!</h1>
+          <h1 className="font-bold text-lg text-red-400">Read Me!</h1>
           <p className="text-xs text-[#8d8d8d] px-1">Messages will be removed if it offends anyone and </p>
           <div className="py-2 p-6">
             <ul className="text-xs text-[#8d8d8d] space-y-1">

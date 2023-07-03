@@ -3,10 +3,10 @@ import { BsPlusCircleFill } from "react-icons/bs"
 
 const Buttons = () => {
   return (
-    <div className="px-3 py-1">
-      <div className="flex items-center gap-4">
+    <div className="px-3 py-1 m-auto w-full">
+      <div>
         <Link to="/write">
-          <div className="bg-red-400 text-white px-5 rounded-md flex items-center h-8 gap-3">
+          <div className="bg-red-400 text-white px-3 rounded-md flex items-center h-8 gap-3">
             <div>
               <BsPlusCircleFill />
             </div>

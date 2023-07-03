@@ -2,21 +2,17 @@ import { BsSearch } from "react-icons/bs";
 
 const Search = () => {
   return (
-    <div className="px-3 py-2">
-      <div>
-        <form action="">
-          <div className="flex items-center gap-2">
-            <input
-              type="text"
-              placeholder="search name...."
-              className="h-8 w-full border border-red-400 rounded-md px-4 text-xs text-center text-[#8d8d8d]"
-            />
-            <div>
-               <BsSearch className="text-red-400"/>
-            </div>
-          </div>
-        </form>
-      </div>
+    <div className="px-3 py-2 w-full">
+      <form action="">
+        <div className="flex items-center h-8 w-full border border-red-400 rounded-md px-4">
+          <input
+            type="text"
+            placeholder="Search name..."
+            className="text-xs text-center text-gray-500 w-full h-full outline-none"
+          />
+          <BsSearch className="text-red-400" />
+        </div>
+      </form>
     </div>
   );
 };
