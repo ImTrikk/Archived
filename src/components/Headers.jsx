@@ -8,7 +8,7 @@ const Headers = () => {
           </h1>
         </div>
         <div className="py-3">
-          <p className="text-xs text-[#8d8d8d] text-center">A place where you can be express yourself and tell someone something for a long time </p>
+          <p className="text-xs text-[#8d8d8d] text-center">An online platform where you have the liberty to express yourself and communicate a message to someone </p>
         </div>
       </div>
     </div>

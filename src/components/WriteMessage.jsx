@@ -1,9 +1,35 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 
 const WriteMessage = () => {
+  const [message, setMessage] = useState("");
+  const [person, setPerson] = useState("");
+
+  const saveMessage = async (event) => {
+    event.preventDefault();
+
+    try {
+      await fetch(buildUrl("/api/write"), {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message,
+          person,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+    } catch (er) {
+      console.log(er)
+      console.log("Error Creating Message")
+    }
+  };
+
   return (
-    <div className="">
+    <div className="lg:px-96">
       <Navbar />
       <div className="p-5">
         <div className="flex">
@@ -11,22 +37,28 @@ const WriteMessage = () => {
         </div>
         <div className="py-2">
           <p className="text-[#8d8d8d] text-xs">
-            Write a message you always wanted  to say to a person
+            Write a message you always wanted to say to a person
           </p>
         </div>
         <div className="py-5">
-          <form action="">
+          <form onSubmit={saveMessage(e.target.value)} action="">
             <div className="space-y-2">
               <div className="border border-red-400 rounded-md">
                 <input
+                value={person}
+                onChange={(e) => setPerson(e.target.value)}
                   type="text"
+                  name="person"
                   placeholder="To someone..."
                   className="w-full text-xs h-8 px-2"
                 />
               </div>
               <div className="border border-red-400 h-40 rounded-md flex justify-center items-center">
                 <input
+                value={message}
+                onChange={(e) => setMessage}
                   type="text"
+                  name="message"
                   placeholder="Write message..."
                   className="rounded-md text-center text-sm h-full w-full"
                 />
@@ -46,7 +78,9 @@ const WriteMessage = () => {
         </div>
         <div className="py-2">
           <h1 className="font-bold text-lg text-red-400">Read Me!</h1>
-          <p className="text-xs text-[#8d8d8d] px-1">Messages will be removed if it offends anyone and </p>
+          <p className="text-xs text-[#8d8d8d] px-1">
+            Messages will be removed if it offends anyone and{" "}
+          </p>
           <div className="py-2 p-6">
             <ul className="text-xs text-[#8d8d8d] space-y-1">
               <li className="list-disc">Be responsible in what you say</li>
