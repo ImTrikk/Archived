@@ -4,7 +4,7 @@ import MessageCard from "../components/MessageCard";
 import Navbar from "../components/Navbar";
 import Search from "../components/SearchComponent";
 
-const MainPage = () => {
+export const MainPage = () => {
   return (
     <div className="p-2 md-28 lg:px-56">
       <div>
@@ -28,5 +28,3 @@ const MainPage = () => {
     </div>
   );
 };
-
-export default MainPage;

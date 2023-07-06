@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Navbar from "./Navbar";
+import { buildUrl } from "../../utils/buildUrl.js"
+import Navbar from "../components/Navbar";
 
-const WriteMessage = () => {
+export const WriteMessage = () => {
   const [message, setMessage] = useState("");
   const [person, setPerson] = useState("");
 
   const saveMessage = async (event) => {
     event.preventDefault();
-
     try {
-      await fetch(buildUrl("/api/write"), {
+      await fetch(buildUrl("/write"), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -23,8 +23,8 @@ const WriteMessage = () => {
         .then((res) => res.json())
         .then((data) => console.log(data));
     } catch (er) {
-      console.log(er)
-      console.log("Error Creating Message")
+      console.log(er);
+      console.log("Error Creating Message");
     }
   };
 
@@ -41,12 +41,12 @@ const WriteMessage = () => {
           </p>
         </div>
         <div className="py-5">
-          <form onSubmit={saveMessage(e.target.value)} action="">
+          <form onSubmit={saveMessage} action="">
             <div className="space-y-2">
               <div className="border border-red-400 rounded-md">
                 <input
-                value={person}
-                onChange={(e) => setPerson(e.target.value)}
+                  value={person}
+                  onChange={(e) => setPerson(e.target.value)}
                   type="text"
                   name="person"
                   placeholder="To someone..."
@@ -54,9 +54,8 @@ const WriteMessage = () => {
                 />
               </div>
               <div className="border border-red-400 h-40 rounded-md flex justify-center items-center">
-                <input
-                value={message}
-                onChange={(e) => setMessage}
+                <textarea
+                  onChange={(e) => setMessage(e.target.value)}
                   type="text"
                   name="message"
                   placeholder="Write message..."
@@ -73,7 +72,7 @@ const WriteMessage = () => {
             </div>
           </Link>
           <div className="bg-red-400 rounded-md h-8 text-sm flex items-center justify-center">
-            <button className="text-white">Submit</button>
+            <button onClick={saveMessage} className="text-white">Submit</button>
           </div>
         </div>
         <div className="py-2">
@@ -95,5 +94,3 @@ const WriteMessage = () => {
     </div>
   );
 };
-
-export default WriteMessage;
