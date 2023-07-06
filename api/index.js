@@ -17,7 +17,7 @@ app.use(
 );
 
 // API routes
-app.use("/api", messageRouter);
+app.use("/api/message", messageRouter);
 
 try {
   dbConnection();
