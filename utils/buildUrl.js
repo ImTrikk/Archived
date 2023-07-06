@@ -6,7 +6,7 @@
 
 
 export const buildUrl = (path) => {
-  const isDev = true; // Set this variable manually to indicate the environment
+  const isDev = false; // Set this variable manually to indicate the environment
 
   return isDev ? `http://localhost:3001/api${path}` : `/api${path}`;
 };
