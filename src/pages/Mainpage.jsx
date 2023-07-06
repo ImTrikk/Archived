@@ -40,6 +40,7 @@ export const MainPage = () => {
         <Search />
         <Buttons />
       </div>
+      
       <div>
         <MessageCard message={message}/> 
       </div>

@@ -10,7 +10,7 @@ const MessageCard = ({ message }) => {
     <div  className="w-full md:flex md:flex-wrap gap-5 md:justify-start space-y-5 py-2 md:py-10 md:space-y-0 px-3 md:px-0">
       {message?.map((m, index) => {
         return (
-          <div key={index} className="w-[285px]">
+          <div key={index} className="w-full md:w-[285px]">
             <div
               style={{ maxHeight: "700px" }}
               className="w-full flex flex-col p-5 bg-yellow-300 rounded-lg"
