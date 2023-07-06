@@ -14,11 +14,10 @@ router.post("/write", async (req, res) => {
     });
 
     await newMessage.save();
-    res.json({message: "Success creating message"})
-
+    res.json({ message: "Success creating message" });
   } catch (err) {
     console.log("Error creating message");
   }
 });
 
-export { router as messageRouter};
+export { router as messageRouter };

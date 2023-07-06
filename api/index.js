@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import { dbConnection } from "./database.js";
-import { messageRouter } from "../Routes/messages.js";
+import { messageRouter } from "./Routes/messages.js";
 
 const app = express();
 
