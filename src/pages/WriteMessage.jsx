@@ -1,16 +1,18 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { buildUrl } from "../../utils/buildUrl.js"
+import { Link, useNavigate } from "react-router-dom";
+import { buildUrl } from "../../utils/buildUrl.js";
 import Navbar from "../components/Navbar";
 
 export const WriteMessage = () => {
   const [message, setMessage] = useState("");
   const [person, setPerson] = useState("");
 
+  const navigate = useNavigate();
+
   const saveMessage = async (event) => {
     event.preventDefault();
     try {
-      await fetch(buildUrl("/message/write"), {
+      const response = await fetch(buildUrl("/message/write"), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -19,9 +21,11 @@ export const WriteMessage = () => {
           message,
           person,
         }),
-      })
-        .then((res) => res.json())
-        .then((data) => console.log(data));
+      });
+      const data = await response.json();
+      console.log(data.message);
+
+      setTimeout(() => navigate("/"), 3000 );
     } catch (er) {
       console.log(er);
       console.log("Error Creating Message");
@@ -72,7 +76,9 @@ export const WriteMessage = () => {
             </div>
           </Link>
           <div className="bg-red-400 rounded-md h-8 text-sm flex items-center justify-center">
-            <button onClick={saveMessage} className="text-white">Submit</button>
+            <button onClick={saveMessage} className="text-white">
+              Submit
+            </button>
           </div>
         </div>
         <div className="py-2">
