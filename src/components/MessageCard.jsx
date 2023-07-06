@@ -12,13 +12,13 @@ const MessageCard = () => {
 
   return (
     <div className="w-[285px]">
-      <div className="w-full flex flex-col p-5 bg-yellow-200 rounded-lg">
+      <div className="w-full flex flex-col p-5 bg-yellow-300 rounded-lg">
         <div className="py-3">
           <div className="px-5">
             <FaQuoteLeft className="text-white" />
           </div>
           <div className="h-full flex items-center py-2 px-5 justify-center text-center">
-            <h1 className="text-sm font-bold text-white">What if kita d,o</h1>
+            <h1 className="text-sm font-bold text-white">Test Message Only</h1>
           </div>
           <div className="flex justify-end px-5">
             <FaQuoteRight className="text-white" />
