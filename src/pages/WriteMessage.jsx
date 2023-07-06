@@ -10,7 +10,7 @@ export const WriteMessage = () => {
   const saveMessage = async (event) => {
     event.preventDefault();
     try {
-      await fetch(buildUrl("/api/message/write"), {
+      await fetch(buildUrl("/message/write"), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
