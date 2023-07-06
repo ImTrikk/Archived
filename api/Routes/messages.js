@@ -1,23 +1,9 @@
 import express from "express";
-import { MessageModels } from "../Models/Messages.js";
+import { WriteMessage } from "../controllers/writeMessage.js";
 
 const router = express.Router();
 
 // writing message endpoint
-router.post("/write", async (req, res) => {
-  const { message, person } = req.body;
-
-  try {
-    const newMessage = new MessageModels({
-      message,
-      person,
-    });
-
-    await newMessage.save();
-    res.json({ message: "Success creating message" });
-  } catch (err) {
-    console.log("Error creating message");
-  }
-});
+router.post("/write", WriteMessage);
 
 export { router as messageRouter };
