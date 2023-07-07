@@ -21,9 +21,6 @@ export const MainPage = () => {
       setMessage(data);
     } catch (err) {}
   };
-
-  // console.log(message);
-
   useEffect(() => {
     getMessages();
   }, []);

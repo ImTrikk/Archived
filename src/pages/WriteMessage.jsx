@@ -2,10 +2,18 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { buildUrl } from "../../utils/buildUrl.js";
 import Navbar from "../components/Navbar";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const WriteMessage = () => {
   const [message, setMessage] = useState("");
   const [person, setPerson] = useState("");
+
+  const notify = () =>
+    toast("Message Saved!", {
+      className: "text-green-500",
+    });
+
 
   const navigate = useNavigate();
 
@@ -25,7 +33,7 @@ export const WriteMessage = () => {
       const data = await response.json();
       console.log(data.message);
 
-      setTimeout(() => navigate("/"), 3000 );
+      setTimeout(() => navigate("/"), 3000);
     } catch (er) {
       console.log(er);
       console.log("Error Creating Message");
@@ -35,6 +43,9 @@ export const WriteMessage = () => {
   return (
     <div className="lg:px-96">
       <Navbar />
+      <div className="text-blue-500">
+        <ToastContainer autoClose={2000}/>
+      </div>
       <div className="p-5">
         <div className="flex">
           <h1 className="font-bold text-red-400 text-xl">Write a Message</h1>
@@ -57,13 +68,13 @@ export const WriteMessage = () => {
                   className="w-full text-xs h-8 px-2"
                 />
               </div>
-              <div className="border border-red-400 h-40 rounded-md flex justify-center items-center">
+              <div className="border border-red-400 h-40 rounded-md flex py-2 items-center">
                 <textarea
                   onChange={(e) => setMessage(e.target.value)}
                   type="text"
                   name="message"
                   placeholder="Write message..."
-                  className="rounded-md text-center text-sm h-full w-full"
+                  className="rounded-md text-sm h-full w-full outline-none px-8 text-gray-500"
                 />
               </div>
             </div>
@@ -75,10 +86,14 @@ export const WriteMessage = () => {
               <button className="text-red-400">Cancel</button>
             </div>
           </Link>
-          <div className="bg-red-400 rounded-md h-8 text-sm flex items-center justify-center">
-            <button onClick={saveMessage} className="text-white">
-              Submit
-            </button>
+          <div
+            onClick={(event) => {
+              saveMessage(event);
+              notify();
+            }}
+            className="bg-red-400 rounded-md h-8 text-sm flex items-center justify-center cursor-pointer"
+          >
+            <button className="text-white">Submit</button>
           </div>
         </div>
         <div className="py-2">

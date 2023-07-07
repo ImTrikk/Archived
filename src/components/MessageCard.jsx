@@ -6,6 +6,7 @@ import { AiTwotoneHeart } from "react-icons/ai";
 import { FaShareAlt } from "react-icons/fa";
 
 const MessageCard = ({ message }) => {
+
   return (
     <div  className="w-full md:flex md:flex-wrap gap-5 md:justify-start space-y-5 py-2 md:py-10 md:space-y-0 px-3 md:px-0">
       {message?.map((m, index) => {
@@ -13,18 +14,18 @@ const MessageCard = ({ message }) => {
           <div key={index} className="w-full md:w-[285px]">
             <div
               style={{ maxHeight: "700px" }}
-              className="w-full flex flex-col p-5 bg-yellow-300 rounded-lg"
+              className="w-full h-[250px] flex flex-col p-2 bg-yellow-300 rounded-lg"
             >
               <div className="py-3">
-                <div className="px-5">
-                  <FaQuoteLeft className="text-white" />
+                <div className="px-5 flex justify-center">
+                  <FaQuoteLeft size={25} className="text-white" />
                 </div>
                 <div className="h-full flex items-center py-2 px-5 justify-center text-center">
-                  <h1 className="text-sm font-bold text-white">{m.message}</h1>
+                  <h1 className="text-sm text-white">{m.message}</h1>
                 </div>
-                <div className="flex justify-end px-5">
+                {/* <div className="flex justify-end px-5">
                   <FaQuoteRight className="text-white" />
-                </div>
+                </div> */}
               </div>
               <div className="flex justify-center">
                 <h1 className="text-xs">To: {m.person}</h1>
