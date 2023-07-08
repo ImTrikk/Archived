@@ -14,7 +14,6 @@ export const WriteMessage = () => {
       className: "text-green-500",
     });
 
-
   const navigate = useNavigate();
 
   const saveMessage = async (event) => {
@@ -34,8 +33,8 @@ export const WriteMessage = () => {
       console.log(data.message);
 
       setTimeout(() => navigate("/"), 3000);
-    } catch (er) {
-      console.log(er);
+    } catch (e) {
+      console.log(e);
       console.log("Error Creating Message");
     }
   };
@@ -44,7 +43,7 @@ export const WriteMessage = () => {
     <div className="lg:px-96">
       <Navbar />
       <div className="text-blue-500">
-        <ToastContainer autoClose={2000}/>
+        <ToastContainer autoClose={2000} />
       </div>
       <div className="p-5">
         <div className="flex">
