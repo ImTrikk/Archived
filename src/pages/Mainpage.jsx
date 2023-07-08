@@ -9,7 +9,7 @@ import Search from "../components/SearchComponent";
 export const MainPage = () => {
   const [message, setMessage] = useState([]);
 
-  const getMessages = async (req, res) => {
+  const getMessages = async () => {
     try {
       let response = await fetch(buildUrl("/message/all").json(), {
         method: "GET",
@@ -21,7 +21,7 @@ export const MainPage = () => {
       setMessage(data);
     } catch (err) {
       console.log("There is an error getting the messages from the server");
-      return res.status(404).json();
+      console.log(err);
     }
   };
   useEffect(() => {
