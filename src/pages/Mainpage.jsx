@@ -5,6 +5,7 @@ import Headers from "../components/Headers";
 import MessageCard from "../components/MessageCard";
 import Navbar from "../components/Navbar";
 import Search from "../components/SearchComponent";
+import { BsXLg } from "react-icons/bs";
 
 export const MainPage = () => {
   const [message, setMessage] = useState([]);
@@ -19,7 +20,10 @@ export const MainPage = () => {
       });
       const data = await response.json();
       setMessage(data);
-    } catch (err) {}
+    } catch (err) {
+  console.log("There is an error getting the messages from the server")
+      console.log(err)
+    }
   };
   useEffect(() => {
     getMessages();
