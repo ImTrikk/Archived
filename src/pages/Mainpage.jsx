@@ -17,7 +17,7 @@ export const MainPage = () => {
         headers: {
           "Content-Type": "application/json",
         },
-      }).json();
+      }).JSON();
       const data = await response.json();
       setMessage(data);
     } catch (err) {
