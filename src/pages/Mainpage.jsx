@@ -21,7 +21,7 @@ export const MainPage = () => {
       setMessage(data);
     } catch (err) {
       console.log("There is an error getting the messages from the server");
-      console.log(err.json());
+      return res.status(401).json();
     }
   };
   useEffect(() => {
