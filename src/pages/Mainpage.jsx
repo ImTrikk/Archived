@@ -8,6 +8,7 @@ import Search from "../components/SearchComponent";
 
 export const MainPage = () => {
   const [message, setMessage] = useState([]);
+  const [error, setError] = useState(null);
 
   const getMessages = async () => {
     try {
@@ -17,13 +18,19 @@ export const MainPage = () => {
           "Content-Type": "application/json",
         },
       });
+
+      if (!response.ok) {
+        throw new Error("Error fetching messages");
+      }
+
       const data = await response.json();
       setMessage(data);
     } catch (err) {
-      console.log("There is an error getting the messages from the server");
-      console.log(err);
+      console.error("Error getting messages:", err);
+      setError("There is an error getting the messages from the server");
     }
   };
+
   useEffect(() => {
     getMessages();
   }, []);
@@ -41,9 +48,13 @@ export const MainPage = () => {
         <Buttons />
       </div>
 
-      <div>
-        <MessageCard message={message} />
-      </div>
+      {error ? (
+        <div>{error}</div>
+      ) : (
+        <div>
+          <MessageCard message={message} />
+        </div>
+      )}
     </div>
   );
 };

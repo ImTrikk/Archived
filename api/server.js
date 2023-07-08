@@ -21,7 +21,8 @@ import { messageRouter } from "./Routes/messages.js";
 
   try {
     dbConnection();
-  } catch (err) {
+  } catch (e) {
+    console.log(e)
     console.log("Error Connection");
   }
 
