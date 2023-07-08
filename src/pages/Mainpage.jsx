@@ -17,7 +17,7 @@ export const MainPage = () => {
           "Content-Type": "application/json",
         },
       });
-      const data = await response();
+      const data = await response;
       setMessage(data);
     } catch (err) {
       console.log("There is an error getting the messages from the server");
