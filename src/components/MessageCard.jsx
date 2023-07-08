@@ -1,9 +1,8 @@
-import { FaQuoteLeft } from "react-icons/fa";
-import { FaQuoteRight } from "react-icons/fa";
 import { HiOutlineDownload } from "react-icons/hi";
 import { BiCopy } from "react-icons/bi";
 import { AiTwotoneHeart } from "react-icons/ai";
 import { FaShareAlt } from "react-icons/fa";
+import {BiSolidArchiveIn} from "react-icons/bi"
 
 const MessageCard = ({ message }) => {
 
@@ -18,22 +17,19 @@ const MessageCard = ({ message }) => {
             >
               <div className="py-3">
                 <div className="px-5 flex justify-center">
-                  <FaQuoteLeft size={25} className="text-white" />
+                  <BiSolidArchiveIn size={25} className="text-white" />
                 </div>
                 <div className="h-full flex items-center py-2 px-5 justify-center text-center">
                   <h1 className="text-sm text-white">{m.message}</h1>
                 </div>
-                {/* <div className="flex justify-end px-5">
-                  <FaQuoteRight className="text-white" />
-                </div> */}
               </div>
-              <div className="flex justify-end px-3">
+              <div className="flex mt-auto items-end justify-center px-3 pt-5">
                 <h1 className="text-xs">
                   To: <span className="italic">{m.person}</span>
                 </h1>
               </div>
-              <div className="flex justify-center pt-10">
-                <div className="flex items-center gap-4">
+              <div className="flex mt-auto justify-center items-end py-2">
+                <div className="flex items-end gap-4 text-yellow-900">
                   <div>
                     <AiTwotoneHeart />
                   </div>
