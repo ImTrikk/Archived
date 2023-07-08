@@ -5,19 +5,18 @@ import Headers from "../components/Headers";
 import MessageCard from "../components/MessageCard";
 import Navbar from "../components/Navbar";
 import Search from "../components/SearchComponent";
-import { BsXLg } from "react-icons/bs";
 
 export const MainPage = () => {
   const [message, setMessage] = useState([]);
 
   const getMessages = async () => {
     try {
-      let response = await fetch(buildUrl("/message/all"), {
+      let response = await fetch(buildUrl("/message/all").json(), {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-      }).JSON();
+      });
       const data = await response.json();
       setMessage(data);
     } catch (err) {
