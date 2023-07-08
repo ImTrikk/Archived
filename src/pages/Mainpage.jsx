@@ -49,7 +49,7 @@ export const MainPage = () => {
       </div>
 
       {error ? (
-        <div>{error}</div>
+        <div className="text-red-500 text-xs flex justify-center">{error}</div>
       ) : (
         <div>
           <MessageCard message={message} />
