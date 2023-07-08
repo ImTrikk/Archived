@@ -13,7 +13,7 @@ const MessageCard = ({ message }) => {
           <div key={index} className="w-full md:w-[285px]">
             <div
               style={{ maxHeight: "700px" }}
-              className="w-full h-[250px] flex flex-col p-2 bg-yellow-300 rounded-lg"
+              className="w-full h-[250px] flex flex-col p-2 bg-gray-400 rounded-lg"
             >
               <div className="py-3">
                 <div className="px-5 flex justify-center">
@@ -24,12 +24,12 @@ const MessageCard = ({ message }) => {
                 </div>
               </div>
               <div className="flex mt-auto items-end justify-center px-3 pt-5">
-                <h1 className="text-xs">
+                <h1 className="text-xs text-white">
                   To: <span className="italic">{m.person}</span>
                 </h1>
               </div>
               <div className="flex mt-auto justify-center items-end py-2">
-                <div className="flex items-end gap-4 text-yellow-900">
+                <div className="flex items-end gap-4 text-gray-600">
                   <div>
                     <AiTwotoneHeart />
                   </div>
