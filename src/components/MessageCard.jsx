@@ -32,7 +32,7 @@ const MessageCard = ({ message }) => {
                   To: <span className="italic">{m.person}</span>
                 </h1>
               </div>
-              <div className="flex justify-center pt-5 ">
+              <div className="flex justify-center pt-10">
                 <div className="flex items-center gap-4">
                   <div>
                     <AiTwotoneHeart />

@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "server": "nodemon api/index.js"
+    "server": "nodemon api/index.js",
+    "vercel-build": "npm run build"
   },
   "dependencies": {
     "@babel/core": "^7.22.6",
