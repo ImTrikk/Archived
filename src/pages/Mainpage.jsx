@@ -18,11 +18,11 @@ export const MainPage = () => {
           "Content-Type": "application/json",
         },
       });
-      const data = await response.json();
+      const data = await response();
       setMessage(data);
     } catch (err) {
-  console.log("There is an error getting the messages from the server")
-      console.log(err)
+      console.log("There is an error getting the messages from the server");
+      console.log(err);
     }
   };
   useEffect(() => {
@@ -41,9 +41,9 @@ export const MainPage = () => {
         <Search />
         <Buttons />
       </div>
-      
+
       <div>
-        <MessageCard message={message}/> 
+        <MessageCard message={message} />
       </div>
     </div>
   );
