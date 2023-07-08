@@ -11,13 +11,13 @@ export const MainPage = () => {
 
   const getMessages = async () => {
     try {
-      let response = await fetch(buildUrl("/message/all").json(), {
+      let response = await fetch(buildUrl("/message/all"), {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
       });
-      const data = await response.json();
+      const data = await response();
       setMessage(data);
     } catch (err) {
       console.log("There is an error getting the messages from the server");
