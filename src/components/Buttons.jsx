@@ -6,7 +6,7 @@ const Buttons = () => {
     <div className="py-1 m-auto w-full">
       <div>
         <Link to="/write">
-          <div className="bg-red-400 text-white px-3 rounded-md flex items-center justify-center h-8 gap-3">
+          <div className="bg-blue-400 text-white px-3 rounded-md flex items-center justify-center h-8 gap-3">
             <div>
               <BsPlusCircleFill />
             </div>

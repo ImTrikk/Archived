@@ -8,7 +8,7 @@ export const WriteMessage = async (req, res) => {
       message,
       person,
     });
-
+    
     await newMessage.save();
     res.json({ message: "Success creating message" });
   } catch (err) {

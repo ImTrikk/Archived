@@ -48,7 +48,7 @@ export const WriteMessage = () => {
       </div>
       <div className="p-5">
         <div className="flex">
-          <h1 className="font-bold text-red-400 text-xl">Write a Message</h1>
+          <h1 className="font-bold text-blue-400 text-xl">Write a Message</h1>
         </div>
         <div className="py-2">
           <p className="text-[#8d8d8d] text-xs">
@@ -58,7 +58,7 @@ export const WriteMessage = () => {
         <div className="py-5">
           <form onSubmit={saveMessage} action="">
             <div className="space-y-2">
-              <div className="border border-red-400 rounded-md">
+              <div className="border border-blue-400 rounded-md">
                 <input
                   value={person}
                   onChange={(e) => setPerson(e.target.value)}
@@ -68,7 +68,7 @@ export const WriteMessage = () => {
                   className="w-full text-xs h-8 px-2"
                 />
               </div>
-              <div className="border border-red-400 h-40 rounded-md flex py-2 items-center">
+              <div className="border border-blue-400 h-40 rounded-md flex py-2 items-center">
                 <textarea
                   onChange={(e) => setMessage(e.target.value)}
                   type="text"
@@ -82,8 +82,8 @@ export const WriteMessage = () => {
         </div>
         <div className="space-y-2">
           <Link to="/">
-            <div className="border border-red-400 rounded-md h-8 text-sm flex items-center justify-center">
-              <button className="text-red-400">Cancel</button>
+            <div className="border border-blue-400 rounded-md h-8 text-sm flex items-center justify-center">
+              <button className="text-blue-400">Cancel</button>
             </div>
           </Link>
           <div
@@ -91,13 +91,13 @@ export const WriteMessage = () => {
               saveMessage(event);
               notify();
             }}
-            className="bg-red-400 rounded-md h-8 text-sm flex items-center justify-center cursor-pointer"
+            className="bg-blue-400 rounded-md h-8 text-sm flex items-center justify-center cursor-pointer"
           >
             <button className="text-white">Submit</button>
           </div>
         </div>
         <div className="py-2">
-          <h1 className="font-bold text-lg text-red-400">Read Me!</h1>
+          <h1 className="font-bold text-lg text-blue-400">Read Me!</h1>
           <p className="text-xs text-[#8d8d8d] px-1">
             Messages will be removed if it offends anyone and{" "}
           </p>

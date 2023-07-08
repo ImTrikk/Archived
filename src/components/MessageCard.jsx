@@ -27,12 +27,12 @@ const MessageCard = ({ message }) => {
                   <FaQuoteRight className="text-white" />
                 </div> */}
               </div>
-              <div className="flex justify-center">
+              <div className="flex justify-end px-3">
                 <h1 className="text-xs">
                   To: <span className="italic">{m.person}</span>
                 </h1>
               </div>
-              <div className="flex justify-end pt-5 ">
+              <div className="flex justify-center pt-5 ">
                 <div className="flex items-center gap-4">
                   <div>
                     <AiTwotoneHeart />
