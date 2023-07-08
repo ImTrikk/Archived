@@ -9,7 +9,7 @@ import Search from "../components/SearchComponent";
 export const MainPage = () => {
   const [message, setMessage] = useState([]);
 
-  const getMessages = async () => {
+  const getMessages = async (req,res) => {
     try {
       let response = await fetch(buildUrl("/message/all").json(), {
         method: "GET",
