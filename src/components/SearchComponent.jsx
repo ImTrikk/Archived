@@ -10,7 +10,7 @@ const Search = () => {
             placeholder="Search name..."
             className="text-xs text-center text-gray-500 w-full h-full outline-none"
           />
-          <BsSearch className="text-red-400" />
+          <BsSearch className="text-red-400 cursor-pointer" />
         </div>
       </form>
     </div>

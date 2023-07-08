@@ -28,7 +28,9 @@ const MessageCard = ({ message }) => {
                 </div> */}
               </div>
               <div className="flex justify-center">
-                <h1 className="text-xs">To: {m.person}</h1>
+                <h1 className="text-xs">
+                  To: <span className="italic">{m.person}</span>
+                </h1>
               </div>
               <div className="flex justify-end pt-5 ">
                 <div className="flex items-center gap-4">
