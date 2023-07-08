@@ -19,7 +19,7 @@ export const WriteMessage = () => {
   const saveMessage = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch(buildUrl("/message/write"), {
+      const response = await fetch(buildUrl("/write"), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
