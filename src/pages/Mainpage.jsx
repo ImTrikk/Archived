@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { buildUrl } from "../../utils/buildUrl";
+import { buildUrl } from "../../api/utils/buildUrl";
 import Buttons from "../components/Buttons";
 import Headers from "../components/Headers";
 import MessageCard from "../components/MessageCard";
