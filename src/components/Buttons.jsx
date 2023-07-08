@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { BsPlusCircleFill } from "react-icons/bs"
+import { BsPlusCircleFill } from "react-icons/bs";
 
 const Buttons = () => {
   return (
