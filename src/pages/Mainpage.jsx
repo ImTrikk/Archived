@@ -15,7 +15,7 @@ export const MainPage = () => {
 
   const getMessages = async () => {
     try {
-      let response = await fetch(buildUrl("/message/limit"), {
+      let response = await fetch(buildUrl("/message/all"), {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
