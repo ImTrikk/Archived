@@ -11,7 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/write" element={<WriteMessage />} />
-          <Route path="/messages" element={<AllMessages />} />
+          <Route path="/allmessages" element={<AllMessages />} />
         </Routes>
       </Router>
     </div>

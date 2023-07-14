@@ -1,9 +1,9 @@
 {
   "rewrites": [
     {
-      "source": "/api/(.*)",
+      "source": "/api/(.)",
       "destination": "/api/server.js"
     },
-    { "source": "/(.*)", "destination": "/api/index.html" }
+    { "source": "/(.)", "destination": "/api/index.html" }
   ]
 }
