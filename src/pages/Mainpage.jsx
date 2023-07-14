@@ -14,15 +14,18 @@ export const MainPage = () => {
   const [message, setMessage] = useState([]);
   const [error, setError] = useState(null);
 
-  const getMessages = async (event) => {
-    event.preventDefault();
+  const getMessages = async () => {
     try {
-      let response = await fetch(buildUrl("/message/limit"), {
+      let response = await fetch(buildUrl("/message/all"), {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
       });
+
+      if (!response.ok) {
+        throw new Error("Error fetching messages");
+      }
 
       const data = await response.json();
       setMessage(data);
