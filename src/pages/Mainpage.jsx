@@ -75,7 +75,9 @@ export const MainPage = () => {
         )}
       </div>
       <div className="flex items-end justify-center w-full">
-        <Footer />
+        <div className="w-full">
+          <Footer />
+        </div>
       </div>
     </div>
   );
