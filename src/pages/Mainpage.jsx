@@ -23,10 +23,6 @@ export const MainPage = () => {
         },
       });
 
-      if (!response.ok) {
-        throw new Error("Error fetching messages");
-      }
-
       const data = await response.json();
       setMessage(data);
     } catch (err) {
