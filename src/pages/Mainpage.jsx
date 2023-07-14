@@ -61,22 +61,16 @@ export const MainPage = () => {
             <MessageCount />
           </div>
         </div>
-        {error ? (
-          <div className="text-red-500 text-xs flex justify-center mt-20">
-            {error}
+        <div className="mt-3">
+          <MessageCard message={message} />
+          <div className="flex justify-center">
+            <Link to="/allmessages">
+              <div className="border border-blue-600 text-blue-600 transition duration-300 hover:bg-blue-600 hover:text-white px-5 rounded h-8 flex items-center mt-10">
+                <h1 className="text-sm">View All Messages</h1>
+              </div>
+            </Link>
           </div>
-        ) : (
-          <div className="mt-3">
-            <MessageCard message={message} />
-            <div className="flex justify-center">
-              <Link to="/allmessages">
-                <div className="border border-blue-600 text-blue-600 transition duration-300 hover:bg-blue-600 hover:text-white px-5 rounded h-8 flex items-center mt-10">
-                  <h1 className="text-sm">View All Messages</h1>
-                </div>
-              </Link>
-            </div>
-          </div>
-        )}
+        </div>
       </div>
       <div className="flex items-end justify-center w-full">
         <div className="w-full">
