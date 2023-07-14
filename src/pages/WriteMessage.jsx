@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { buildUrl } from "../../api/utils/buildUrl.js";
+import { buildUrl } from "../utils/buildUrl.js";
 import Navbar from "../components/Navbar";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -114,7 +114,7 @@ export const WriteMessage = () => {
           </div>
         </div>
       </div>
-    <Footer/>
+      <Footer />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
-import { buildUrl } from "../../api/utils/buildUrl";
+import { buildUrl } from "../utils/buildUrl";
 import MessageCard from "../components/MessageCard";
 import { Footer } from "../components/footer";
 import Search from "../components/SearchComponent";

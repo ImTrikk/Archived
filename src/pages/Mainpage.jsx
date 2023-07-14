@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { buildUrl } from "../../api/utils/buildUrl";
+import { buildUrl } from "../utils/buildUrl";
 import Buttons from "../components/Buttons";
 import Headers from "../components/Headers";
 import MessageCard from "../components/MessageCard";
