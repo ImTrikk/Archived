@@ -28,7 +28,7 @@ export const MainPage = () => {
       }
 
       const data = await response.json();
-      console.log(data)
+      console.log(data);
       setMessage(data);
     } catch (err) {
       console.error("Error getting messages:", err);
