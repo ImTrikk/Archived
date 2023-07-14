@@ -12,7 +12,6 @@ import { MessageCount } from "../components/MessageCount";
 export const MainPage = () => {
   const [message, setMessage] = useState([]);
   const [error, setError] = useState(null);
-  const [sortOption, setSortOption] = useState("latest"); // Default sort option is "latest"
 
   const getMessages = async () => {
     try {
@@ -28,16 +27,7 @@ export const MainPage = () => {
       }
 
       const data = await response.json();
-
-      // Sort messages based on the selected sort option
-      let sortedData = [];
-      if (sortOption === "latest") {
-        sortedData = [...data].sort((a, b) => b.timestamp - a.timestamp);
-      } else if (sortOption === "oldest") {
-        sortedData = [...data].sort((a, b) => a.timestamp - b.timestamp);
-      }
-
-      setMessage(sortedData);
+      setMessage(data);
     } catch (err) {
       console.error("Error getting messages:", err);
       setError("There is an error getting the messages from the server");

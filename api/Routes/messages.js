@@ -7,7 +7,6 @@ const router = express.Router();
 
 // writing message endpoint
 router.post("/write", WriteMessage);
-
 router.get("/limit", Message)
 router.get("/all", AllMessage)
 
