@@ -1,15 +1,14 @@
+import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
 import { buildUrl } from "../../api/utils/buildUrl";
-import Buttons from "../components/Buttons";
-import Headers from "../components/Headers";
 import MessageCard from "../components/MessageCard";
-import Navbar from "../components/Navbar";
-import Search from "../components/SearchComponent";
 import { Footer } from "../components/footer";
+import Search from "../components/SearchComponent";
+import Buttons from "../components/Buttons";
 import SortButton from "../components/SortingComponent";
 import { MessageCount } from "../components/MessageCount";
 
-export const MainPage = () => {
+export const AllMessages = () => {
   const [message, setMessage] = useState([]);
   const [error, setError] = useState(null);
   const [sortOption, setSortOption] = useState("latest"); // Default sort option is "latest"
@@ -49,42 +48,46 @@ export const MainPage = () => {
   }, []);
 
   return (
-    <div className="">
+    <div>
       <div className="p-2 lg:px-56">
-        <div>
-          <Navbar />
+        <Navbar />
+        <div className="mb-5">
+          <div className="flex items-center justify-center py-2">
+            <h1 className="text-3xl text-blue-500 font-black">All Messages</h1>
+          </div>
+          <div className="flex justify-center">
+            <p className="text-gray-500 text-xs">
+              When creating messages, please think before sending
+            </p>
+          </div>
         </div>
-        <div>
-          <Headers />
-        </div>
-        <div className="flex items-center justify-between gap-2 md:gap-10 px-3 md:px-0">
+        <div className="flex items-center justify-between gap-2 md:gap-10 md:px-0">
           <Search />
           <Buttons />
         </div>
-        <div className="w-full flex items-center justify-between mt-3">
-          <div className="w-full">
+        <div className="flex mt-4 mb-2 items-center justify-between px-3 mr-5">
+          <div className="">
             <SortButton />
           </div>
-          <div className="w-full flex items-center justify-end">
+          <div>
             <MessageCount />
           </div>
         </div>
-        {error ? (
-          <div className="text-red-500 text-xs flex justify-center mt-20">
-            {error}
-          </div>
-        ) : (
-          <div className="mt-3">
-            <MessageCard message={message} />
-            <div className="flex justify-center">
-              <div className="border border-blue-600 text-blue-600 transition duration-300 hover:bg-blue-600 hover:text-white px-5 rounded h-8 flex items-center mt-10">
-                <h1 className="text-sm">View All Messages</h1>
-              </div>
+        <div>
+          {error ? (
+            <div className="text-red-500 text-xs flex justify-center mt-20">
+              {error}
             </div>
-          </div>
-        )}
+          ) : (
+            <div>
+              <MessageCard message={message} />
+            </div>
+          )}
+        </div>
       </div>
-      <Footer />
+      <div className="mt-10">
+        <Footer />
+      </div>
     </div>
   );
 };

@@ -7,13 +7,13 @@ import {BiSolidArchiveIn} from "react-icons/bi"
 const MessageCard = ({ message }) => {
 
   return (
-    <div  className="w-full md:flex md:flex-wrap gap-5 md:justify-start space-y-5 py-2 md:py-10 md:space-y-0 px-3 md:px-0">
+    <div  className="w-full md:flex md:flex-wrap gap-6 md:justify-start space-y-5 py-2 md:space-y-0 px-3 md:px-0">
       {message?.map((m, index) => {
         return (
           <div key={index} className="w-full md:w-[285px]">
             <div
               style={{ maxHeight: "700px" }}
-              className="w-full h-[250px] flex flex-col p-2 bg-gray-400 rounded-lg"
+              className="w-full h-[250px] flex flex-col p-2 bg-blue-500 rounded-lg"
             >
               <div className="py-3">
                 <div className="px-5 flex justify-center">
@@ -29,7 +29,7 @@ const MessageCard = ({ message }) => {
                 </h1>
               </div>
               <div className="flex mt-auto justify-center items-end py-2">
-                <div className="flex items-end gap-4 text-gray-600">
+                <div className="flex items-end gap-4 text-blue-800">
                   <div>
                     <AiTwotoneHeart />
                   </div>
