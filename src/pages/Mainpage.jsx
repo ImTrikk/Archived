@@ -41,7 +41,7 @@ export const MainPage = () => {
   }, []);
 
   return (
-    <div className="">
+    <div className="h-screen">
       <div className="p-2 lg:px-56">
         <div>
           <Navbar />
