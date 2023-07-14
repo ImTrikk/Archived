@@ -5,7 +5,8 @@ import { Message } from "../controllers/messagesQuery.js";
 const router = express.Router();
 
 // writing message endpoint
-router.post("/write", WriteMessage);
 router.get("/all", Message);
+router.post("/write", WriteMessage);
+
 
 export { router as messageRouter };
