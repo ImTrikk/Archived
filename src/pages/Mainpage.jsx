@@ -14,7 +14,8 @@ export const MainPage = () => {
   const [message, setMessage] = useState([]);
   const [error, setError] = useState(null);
 
-  const getMessages = async () => {
+  const getMessages = async (event) => {
+    event.preventDefault();
     try {
       let response = await fetch(buildUrl("/message/limit"), {
         method: "GET",
