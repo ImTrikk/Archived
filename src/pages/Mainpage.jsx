@@ -53,9 +53,9 @@ export const MainPage = () => {
           <Buttons />
         </div>
         <div className="w-full flex items-center justify-between mt-3">
-          <div className="w-full">
+          {/* <div className="w-full">
             <SortButton />
-          </div>
+          </div> */}
           <div className="w-full flex items-center justify-end">
             <MessageCount />
           </div>
