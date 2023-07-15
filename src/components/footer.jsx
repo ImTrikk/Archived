@@ -8,7 +8,7 @@ export const Footer = () => {
           <div className="space-y-1">
             <div className="flex items-center justify-center gap-2">
               <h1 className="text-gray-600 text-xs">
-                Made By:{" "}
+                Developed By:{" "}
                 <span className="underline text-sm cursor-pointer">
                   Patrick James Dionen
                 </span>{" "}
