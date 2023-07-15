@@ -2,7 +2,7 @@ import { BsStars } from "react-icons/bs";
 
 export const Footer = () => {
   return (
-    <div className="flex items-end justify-end">
+    <div className="flex">
       <div className="bg-white border h-28 w-full mt-20">
         <div className="flex items-center justify-center h-full">
           <div className="space-y-1">

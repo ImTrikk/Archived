@@ -41,8 +41,8 @@ export const MainPage = () => {
   }, []);
 
   return (
-    <div className="h-screen">
-      <div className="p-2 lg:px-56">
+    <div className="h-fit md:h-screen relative">
+      <div className="p-2 lg:px-56 pb-32">
         <div>
           <Navbar />
         </div>
@@ -53,7 +53,7 @@ export const MainPage = () => {
           <Search />
           <Buttons />
         </div>
-        <div className="w-full flex items-center justify-between mt-3">
+        <div className="w-full flex items-center justify-between mt-3 px-3 md:px-0">
           <div className="w-full">
             <SortButton />
           </div>
@@ -78,7 +78,7 @@ export const MainPage = () => {
           </div>
         )}
       </div>
-      <div className="flex items-end justify-center w-full">
+      <div className="flex absolute -bottom-28 md:-bottom-96 right-0 left-0 justify-center w-full">
         <div className="w-full">
           <Footer />
         </div>
