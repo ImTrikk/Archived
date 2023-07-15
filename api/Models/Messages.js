@@ -9,6 +9,13 @@ const MessageSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  dateField: {
+    type: Date,
+    default: () => {
+      const currentDate = new Date();
+      currentDate.setHours(0, 0, 0, 0);
+      return currentDate;
+    },
+  },
 });
-
 export const MessageModels = mongoose.model("message", MessageSchema);

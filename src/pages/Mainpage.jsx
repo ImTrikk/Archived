@@ -11,7 +11,9 @@ import SortButton from "../components/SortingComponent";
 import { MessageCount } from "../components/MessageCount";
 
 export const MainPage = () => {
+  const [count, setCount] = useState(0);
   const [message, setMessage] = useState([]);
+  const [sortedMessage, setSortedMessage] = useState([]);
   const [error, setError] = useState(null);
 
   const getMessages = async () => {
@@ -28,6 +30,7 @@ export const MainPage = () => {
       }
 
       const data = await response.json();
+      setCount(data.length);
       console.log(data);
       setMessage(data);
     } catch (err) {
@@ -40,8 +43,26 @@ export const MainPage = () => {
     getMessages();
   }, []);
 
+  const handleSortChange = (selectedOption) => {
+    console.log(selectedOption);
+
+    let sortedMessages = [...message];
+
+    if (selectedOption === "latest") {
+      sortedMessages.sort(
+        (a, b) => new Date(b.dateField) - new Date(a.dateField)
+      );
+    } else if (selectedOption === "oldest") {
+      sortedMessages.sort(
+        (a, b) => new Date(a.dateField) - new Date(b.dateField)
+      );
+    }
+
+    setSortedMessage(sortedMessages);
+  };
+
   return (
-    <div className="h-fit md:h-screen relative">
+    <div className="h-auto md:h-fit lg:h-screen relative">
       <div className="p-2 lg:px-56 pb-32">
         <div>
           <Navbar />
@@ -54,11 +75,11 @@ export const MainPage = () => {
           <Buttons />
         </div>
         <div className="w-full flex items-center justify-between mt-3 px-3 md:px-0">
-          <div className="w-full">
-            <SortButton />
+          <div className="w-full flex items-center">
+            <MessageCount count={count} />
           </div>
-          <div className="w-full flex items-center justify-end">
-            <MessageCount />
+          <div className="">
+            <SortButton onChange={handleSortChange} />
           </div>
         </div>
         {error ? (
@@ -78,7 +99,7 @@ export const MainPage = () => {
           </div>
         )}
       </div>
-      <div className="flex absolute -bottom-28 md:-bottom-96 right-0 left-0 justify-center w-full">
+      <div className="flex items-end justify-center mt-auto w-full">
         <div className="w-full">
           <Footer />
         </div>
