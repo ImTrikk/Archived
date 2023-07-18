@@ -11,11 +11,7 @@ const MessageSchema = new mongoose.Schema({
   },
   dateField: {
     type: Date,
-    default: () => {
-      const currentDate = new Date();
-      currentDate.setHours(0, 0, 0, 0);
-      return currentDate;
-    },
+    default: Date.now,
   },
 });
 export const MessageModels = mongoose.model("message", MessageSchema);

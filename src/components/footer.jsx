@@ -9,9 +9,11 @@ export const Footer = () => {
             <div className="flex items-center justify-center gap-2">
               <h1 className="text-gray-600 text-xs">
                 Developed By:{" "}
-                <span className="underline text-sm cursor-pointer">
-                  Patrick James Dionen
-                </span>{" "}
+                <a href="https://patrick-james-dionen.vercel.app/">
+                  <span className="underline text-sm cursor-pointer">
+                    Patrick James Dionen
+                  </span>{" "}
+                </a>
               </h1>
               <BsStars size={20} className="text-yellow-400" />
             </div>

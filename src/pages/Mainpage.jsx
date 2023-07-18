@@ -33,6 +33,7 @@ export const MainPage = () => {
       setCount(data.length);
       console.log(data);
       setMessage(data);
+      setSortedMessage(data); // Set initial sorted messages
     } catch (err) {
       console.error("Error getting messages:", err);
       setError("There is an error getting the messages from the server");
@@ -43,11 +44,9 @@ export const MainPage = () => {
     getMessages();
   }, []);
 
+  // for sorting the messages onChange
   const handleSortChange = (selectedOption) => {
-    console.log(selectedOption);
-
     let sortedMessages = [...message];
-
     if (selectedOption === "latest") {
       sortedMessages.sort(
         (a, b) => new Date(b.dateField) - new Date(a.dateField)
@@ -88,7 +87,12 @@ export const MainPage = () => {
           </div>
         ) : (
           <div className="mt-3">
-            <MessageCard message={message} />
+            {/* Render intitially if message is not yet sorted */}
+            {sortedMessage.length > 0 ? (
+              <MessageCard message={sortedMessage} />
+            ) : (
+              <MessageCard message={message} />
+            )}
             <div className="flex justify-center">
               <Link to="/allmessages">
                 <div className="border border-blue-600 text-blue-600 transition duration-300 hover:bg-blue-600 hover:text-white px-5 rounded h-8 flex items-center mt-10">
