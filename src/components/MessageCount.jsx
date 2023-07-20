@@ -12,7 +12,7 @@ export const MessageCount = ({ count }) => {
     <div>
       <div className="flex items-center gap-3">
         <Link to="/allmessages">
-          <h1 className="text-gray-500 text-sm">Archived Messages:</h1>
+          <h1 className="text-gray-500 text-sm">Total Messages:</h1>
         </Link>
         <h1 className="font-black text-blue-600 text-3xl">{messageCount}</h1>
       </div>
