@@ -4,7 +4,7 @@ const Headers = () => {
       <div className="px-3">
         <div className="flex justify-center items-center">
           <h1 className="text-xl font-bold text-blue-500 ">
-            " Archive of Unsaid Words "
+           Leave a Message to Someone...
           </h1>
         </div>
         <div className="py-3">
