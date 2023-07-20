@@ -11,7 +11,7 @@ const MessageSchema = new mongoose.Schema({
   },
   dateField: {
     type: Date,
-    default: Date.now,
+    default: Date.now,  
   },
 });
 export const MessageModels = mongoose.model("message", MessageSchema);

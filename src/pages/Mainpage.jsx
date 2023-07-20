@@ -56,7 +56,6 @@ export const MainPage = () => {
         (a, b) => new Date(a.dateField) - new Date(b.dateField)
       );
     }
-
     setSortedMessage(sortedMessages);
   };
 

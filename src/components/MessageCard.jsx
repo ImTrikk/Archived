@@ -14,20 +14,27 @@ const MessageCard = ({ message }) => {
             year: "numeric",
             month: "long",
             day: "numeric",
+            hour: "numeric",
+            minute: "numeric",
+            second: "numeric",
           }
         );
         return (
           <div key={index} className="w-full md:w-[285px]">
             <div
-              style={{ maxHeight: "700px" }}
+              style={{ maxHeight: "900px" }}
               className="w-full h-[250px] flex flex-col p-2 bg-blue-500 rounded-lg"
             >
               <div className="py-3">
                 <div className="px-5 flex justify-center">
                   <BiSolidArchiveIn size={25} className="text-white" />
                 </div>
-                <div className="h-full flex items-center py-2 px-5 justify-center text-center">
-                  <h1 className="text-xs text-white">{m.message}</h1>
+                <div className="h-[80px] flex items-center py-2 px-5 justify-center text-center overflow-hidden overflow-y-hidden">
+                  <h1 className="text-xs text-white">
+                    <span className="text-2xl font-semibold">"</span>
+                    {m.message}
+                    <span className="text-2xl font-semibold">"</span>
+                  </h1>
                 </div>
               </div>
               <div className="flex items-center mt-3 flex-col pt-5 space-y-1">
