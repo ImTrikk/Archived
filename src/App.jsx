@@ -3,8 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { MainPage } from "./pages/Mainpage";
 import { WriteMessage } from "./pages/WriteMessage";
 import { AllMessages } from "./pages/AllMessages";
+import {inject} from "@vercel/analytics"
 
 function App() {
+  inject()
   return (
     <div>
       <Router>
