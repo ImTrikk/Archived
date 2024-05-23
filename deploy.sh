@@ -34,6 +34,6 @@ scp -P $PORT -r build/* $USER@$SERVER:$REMOTE_PATH
 echo "Setting permissions..."
 ssh -p $PORT $USER@$SERVER "sudo chown -R www-data:www-data $REMOTE_PATH && sudo chmod -R 755 $REMOTE_PATH"
 
+# wget https://github.com/ImTrikk/Archived/blob/main/Archived.7z
+# sudo unzip Archived.zip -d /var/www/web
 echo "Done!"
-
-# https://github.com/ImTrikk/Archived/blob/main/Archived.7z
