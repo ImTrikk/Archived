@@ -5,7 +5,7 @@ set -e
 
 # Configuration variables
 SERVER="192.168.1.18"
-USER="user"
+USER="administrator"
 REMOTE_PATH="/var/www/192.168.1.18"
 PORT="2049" # Change this to the alternative port if needed
 
