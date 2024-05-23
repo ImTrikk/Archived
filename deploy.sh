@@ -7,7 +7,7 @@ set -e
 SERVER="192.168.1.18"
 USER="administrator"
 REMOTE_PATH="/var/www/192.168.1.18"
-PORT="2049" # Change this to the alternative port if needed
+PORT="22" # Change this to the alternative port if needed
 
 # Checkout to git main (or correct branch name)
 echo "Switching to main branch..."
