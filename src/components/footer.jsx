@@ -9,7 +9,7 @@ export const Footer = () => {
             <div className="flex items-center justify-center gap-2">
               <h1 className="text-gray-600 text-xs">
                 Developed By:{" "}
-                <a href="https://patrick-james-dionen.vercel.app/">
+                <a href="https://patrick-dionen.vercel.app/">
                   <span className="underline text-sm cursor-pointer">
                     Patrick James Dionen
                   </span>{" "}
@@ -20,9 +20,11 @@ export const Footer = () => {
             <div className="flex items-center justify-center">
               <h1 className="text-gray-500 text-xs">
                 Also inspired by the{" "}
-                <span className="underline italic cursor-pointer">
-                  Unsent Project
-                </span>{" "}
+                <a href="https://theunsentproject.com/#">
+                  <span className="underline italic cursor-pointer">
+                    Unsent Project
+                  </span>{" "}
+                </a>
               </h1>
             </div>
           </div>
