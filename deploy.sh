@@ -6,7 +6,10 @@ set -e
 # Configuration variables
 SERVER="192.168.1.18"
 USER="administrator"
-REMOTE_PATH="/var/www/192.168.1.18"
+
+sudo mkdir -p /var/www/web
+
+REMOTE_PATH="/var/www/web"
 PORT="22" # Change this to the alternative port if needed
 
 # Checkout to git main (or correct branch name)
@@ -22,12 +25,11 @@ echo "Building the app..."
 npm install
 npm run build
 
-sudo exportfs -ar
-sudo exportfs -v
 
 # Deploy files to server t
 echo "Deploying files to server..."
 scp -P $PORT -r build/* $USER@$SERVER:$REMOTE_PATH
+
 
 # Setting permissions on the server
 echo "Setting permissions..."
