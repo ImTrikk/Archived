@@ -28,7 +28,7 @@ ssh -p $PORT $USER@$SERVER "mkdir -p $REMOTE_PATH"
 
 # Deploy files to server
 echo "Deploying files to server..."
-scp -P $PORT -r build/* $USER@$SERVER:$REMOTE_PATH
+scp -P $PORT -r dist/* $USER@$SERVER:$REMOTE_PATH
 
 # Setting permissions on the server
 echo "Setting permissions..."
