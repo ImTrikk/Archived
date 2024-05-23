@@ -4,12 +4,12 @@
 set -e
 
 # Checkout to git master
-echo "Switching to master branch..."
-git checkout master
+echo "Switching to main branch..."
+git checkout main
 
 # Pull latest changes
 echo "Pulling latest changes..."
-git pull origin master
+git pull origin main
 
 # Build the React app
 echo "Building the app..."
