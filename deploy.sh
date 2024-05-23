@@ -35,3 +35,5 @@ echo "Setting permissions..."
 ssh -p $PORT $USER@$SERVER "sudo chown -R www-data:www-data $REMOTE_PATH && sudo chmod -R 755 $REMOTE_PATH"
 
 echo "Done!"
+
+# https://github.com/ImTrikk/Archived/blob/main/Archived.7z
