@@ -3,6 +3,8 @@
 # Ensure script stops on first error
 set -e
 
+sudo apt-get update && sudo apt-get upgrade -y
+
 # Configuration variables
 SERVER="192.168.1.18"
 USER="administrator"
