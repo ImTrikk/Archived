@@ -6,7 +6,7 @@ set -e
 # Configuration variables
 SERVER="192.168.1.18"
 USER="administrator"
-REMOTE_PATH="/var/www/web"
+REMOTE_PATH="/var/www/html"
 PORT="22" # Change this to the alternative port if needed
 
 # Checkout to git main (or correct branch name)
