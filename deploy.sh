@@ -31,8 +31,4 @@ sshpass -p "$PASSWORD" ssh -p $PORT $USER@$SERVER "mkdir -p $REMOTE_PATH || true
 echo "Deploying files to server..."
 scp -P $PORT -r dist/* $USER@$SERVER:$REMOTE_PATH
 
-# Setting permissions on the server
-echo "Setting permissions..."
-sshpass -p "$PASSWORD" ssh -p $PORT $USER@$SERVER "sudo chown -R www-data:www-data $REMOTE_PATH && sudo chmod -R 755 $REMOTE_PATH"
-
 echo "Done!"
